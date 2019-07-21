@@ -10,6 +10,8 @@
 
 void sendByte(uint8_t data);
 
+void receiveByte(uint8_t * data);
+
 void serialDelay(void);
 
 extern uint8_t bitcount;

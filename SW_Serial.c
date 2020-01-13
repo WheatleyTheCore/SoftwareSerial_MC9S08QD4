@@ -13,7 +13,8 @@
 #include "Cpu.h"
 #include "WAIT1.h"
 #include "MCUC1.h"
-#include "Serial.h"
+#include "SerialTx.h"
+#include "SerialRx.h"
 #include "SWSerial.h"
 
 void sendByte(uint8_t data) {
@@ -29,6 +30,22 @@ void sendByte(uint8_t data) {
 	Serial_SetVal();
 	serialDelay();
 	WAIT1_Waitms(1);
+	return;
+}
+
+void recieveByte(uint8_t *recievedChar) {
+	uint8_t bitcount;
+	*recievedChar = 0;
+	serialDelay(); //wait 104 microseconds(as the baud rate is in 9600 in this case)
+	
+	for (bitcount = 0; bitcount < 8; bitcount++) {
+		if(/*READ SerialRX.h*/) {
+			*receivedChar = recievedChar | 0x01;
+		}
+		*receivedChar << 1;
+		serialDelay();
+	}
+	
 	return;
 }
 

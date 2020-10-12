@@ -2,7 +2,7 @@
 Bit Banging a UARTless chip. Allows for any of the pins to become TX and RX pins. Tested with FTDI basic and Tera Term on windows. 
 
 This only really allows for sending charachters, and only works at a baud of 9800.
-This is meant mostly as a proof of concept than for actual use.
+This is meant mostly as a proof of concept rather than for actual use.
 
 ## Setup
 - All you need you to is create a bitIO component called SerialTx, and another called SerialRx.
